@@ -1,0 +1,23 @@
+main {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    min-height:90vh;
+}
+img {
+    border:2px solid lightgrey;
+    border-radius:10px;
+    padding:15px;
+    margin-right:25px;
+}
+
+/*
+To account for the moving elements due to the difference in border pixel size (img vs hover), 
+include negative margins to the hover element. The value will be the difference between the hover border size 
+and the original border size (-7px as img:hover adds an additional 7px).  Margin Right decreases to 18px
+due to setting a 25px pixel right margin above.
+*/
+img:hover {
+    border:9px solid red;
+    margin:-7px 18px -7px -7px;
+}
