@@ -1,10 +1,22 @@
 main {
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.container {
     display:flex;
     justify-content: center;
     align-items:center;
-    min-height:90vh;
 }
-img {
+
+#method1 {
+    margin-bottom:15px;
+}
+
+#method1 .container img {
     border:2px solid lightgrey;
     border-radius:10px;
     padding:15px;
@@ -17,7 +29,33 @@ include negative margins to the hover element. The value will be the difference 
 and the original border size (-7px as img:hover adds an additional 7px).  Margin Right decreases to 18px
 due to setting a 25px pixel right margin above.
 */
-img:hover {
+#method1 .container img:hover {
     border:9px solid red;
     margin:-7px 18px -7px -7px;
+}
+
+
+
+
+
+/*
+  Specify a fixed width to the images and set the box-sizing to border-box. This will ensure that the 
+  element will never go greater than the fixed width's size. 
+*/
+#method2 .container img {
+    border:2px solid lightgrey;
+    border-radius:10px;
+    box-sizing:border-box;
+    margin-right:25px;
+    padding:15px;
+    width:300px;
+}
+
+/*
+  If a padding was included like above, reduce the padding in the hover selection to ensure that the image
+  itself does not get resized.
+*/
+#method2 .container img:hover {
+    border:9px solid red;
+    padding:8px;
 }
